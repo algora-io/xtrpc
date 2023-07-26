@@ -15,9 +15,9 @@ const Config = z.object({
     .default({ appRouterAlias: "AppRouter" }),
 });
 
-const readFile = (path: string) => {
+const readFile = async (path: string) => {
   try {
-    return fs.readFile(path, { encoding: "utf8" });
+    return await fs.readFile(path, { encoding: "utf8" });
   } catch {
     return undefined;
   }
@@ -35,6 +35,8 @@ const toJson = (s: string, ctx: z.RefinementCtx) => {
 export const readConfig = async (path: string) =>
   z
     .string()
+    .optional()
+    .default("{}")
     .transform(toJson)
     .pipe(Config)
     .parse(await readFile(path));

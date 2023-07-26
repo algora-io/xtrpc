@@ -1,6 +1,6 @@
 {
   "name": "@algora/xtrpc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Export your tRPC router to massively improve language server performance and/or let your users consume your API from a typed SDK",
   "author": "Algora PBC. <info@algora.io> (https://algora.io)",
   "maintainers": [
