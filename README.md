@@ -95,7 +95,7 @@ export const trpc = createTRPCNext<API>({...})
 
 ## Usage
 
-Once you've set up your client to use the API, just rerun the tool whenever your [type assertion](#recommended-add-a-type-assertion-to-maintain-type-safety) fails to regenerate your API
+Once you've set up your client to use the API, just rerun the tool to regenerate it whenever your [type assertion](#recommended-add-a-type-assertion-to-maintain-type-safety) fails
 ```bash
 pnpm xtrpc
 ```
@@ -136,4 +136,4 @@ Add a `xtrpc.config.json` file in your project to configure 𝕏tRPC. Below is t
 # Caveats
 
 - 𝕏tRPC may not work properly if your procedure outputs are not explicitly declared. For best results, add `.output` to all of your procedures (which is a good practice to not leak sensitive info anyways) and enable `explicitOutputs` in your `xtrpc.config.json`
-- "Go to definition" jumps to the emitted `.d.ts` file instead of your source code. This can probably be fixed by emitting a source map.
+- "Go to definition" jumps to the emitted `.d.ts` file instead of your source code. This can potentially be fixed by emitting declaration map(s) alongside your API.
